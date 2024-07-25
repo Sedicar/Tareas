@@ -1,0 +1,43 @@
+{{ define "editar" }}
+{{ template "cabecera" }}
+<br/><br/>
+<div class="card">
+    <div class="card-header">
+        Empleados
+    </div>
+    <div class="card-body">
+        <form method="post" action="/actualizar">
+
+
+                <input type="hidden" value={{.Id}} class="form-control" name="id" id="id" placeholder="">
+
+
+            <div class="form-group">
+              <label for="">Nombre:</label>
+              <input type="text"
+                class="form-control" name="nombre" value={{.Nombre}} id="nombre" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe el nuevo nombre @_@</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Precio:</label>
+              <input type="text"
+                class="form-control" name="precio" value={{.Precio}} id="precio" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe el nuevo precio @_@@</small>
+            </div>
+            
+            <div class="form-group">
+              <label for="">Detalle:</label>
+              <input type="text"
+                class="form-control" name="detalle" value={{.Detalle}} id="detalle" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe el nuevo detalle @_@</small>
+            </div>
+            <button type="submit" class="btn btn-success">Guardar cambios</button>
+            
+          <a name="" id="" class="btn btn-danger" href="/" role="button">Cancelar</a>
+          </form>
+    </div>
+
+</div>
+{{ template "pie" }}
+{{ end }}
