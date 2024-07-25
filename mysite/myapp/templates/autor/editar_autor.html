@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Actualiza Datos</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="bg-green-500 hover:bg-green-400 rounded-full transform hover:scale-105 transition duration-300 px-3 py-1 text-white">Guardar</button>
+</form>
+{% endblock %}

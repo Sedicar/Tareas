@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+    <h2>Miembros</h2>
+    <div class="mb-4">
+        <a href="{% url 'crear_autor' %}"><button class="bg-green-500 hover:bg-green-400 rounded-full transform hover:scale-105 transition duration-300 px-3 py-1 text-white">Ingresar Nuevo Miembro</button></a>
+    </div>
+</div>
+<hr>
+    <table>
+        <thead>
+            <div class="mb-4 flex space-x-10 center-table ">
+                <p>Nombre</p>
+                <p>Opciones</p>
+            </div>
+        </thead>
+        <tbody>
+            {% for autor in autores %}
+            <tr>
+                <td>
+                    {{autor.name}}
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <a href="{% url 'editar_autor' autor.id %}"><button class="bg-green-500 hover:bg-green-400 rounded-full transform hover:scale-105 transition duration-300 px-3 py-1 text-white">Editar</button>{{ autor.nombre }}</a>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                   <a href="{% url 'eliminar_autor' autor.id %}"><button class="bg-red-600 hover:bg-red-500 rounded-full transform hover:scale-105 transition duration-300 px-3 py-1 text-white">Eliminar</button>{{ autor.nombre }}</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>   
+{% endblock %}
